@@ -1,22 +1,24 @@
-import CL_Censo from "./CL_Censo.js";
-import CL_ICenso from "./CL_ICenso.js";
-import CL_IPersonas from "./CL_IPersonas.js";
+import CL_Edad from "./CL_Edad.js";
 import CL_Personas from "./CL_Personas.js";
 
-let iCenso = new CL_ICenso(),
-censo = new CL_Censo(),
-salida = document.getElementById("salida");
+let personas1 = new CL_Personas(15);
+let personas2 = new CL_Personas(14);
+let personas3 = new CL_Personas(19);
+let personas4 = new CL_Personas(20);
+let personas5 = new CL_Personas(16);
+let personas6 = new CL_Personas(18);
 
-let opc = 1;
 
-while(opc == 1){
-    let iPersonas = new CL_IPersonas(),
-    e = iPersonas.leerEdad(),
-    personas = new CL_Personas(e);
+let edad = new CL_Edad();
 
-    censo.procesarPersona(personas);
+edad.procesarPersona(personas1);
+edad.procesarPersona(personas2);
+edad.procesarPersona(personas3);
+edad.procesarPersona(personas4);
+edad.procesarPersona(personas5);
+edad.procesarPersona(personas6);
 
-    opc = iPersonas.solicitarOpcion();
-}
+let salida = document.getElementById("salida");
 
-salida.innerHTML=iCenso.reporteCenso(censo.promedioEdad());
+salida.innerHTML =`
+<br>El promedio de edad es: ${edad.promedioEdad()}`

@@ -1,4 +1,4 @@
-export default class CL_Censo{
+export default class CL_Edad{
     constructor(){
         this.cntPersonas = 0;
         this.acEdad = 0;
